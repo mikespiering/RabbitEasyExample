@@ -1,0 +1,8 @@
+cd QueueDemoReceiver	
+mvn package
+cd ..
+cd QueueDemoSender
+mvn package
+cd ..	
+cf create-service p-rabbitmq standard testRabbit
+cf push -f manifest.yml

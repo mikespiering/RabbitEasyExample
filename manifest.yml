@@ -1,0 +1,15 @@
+applications:
+- name: QSender
+  memory: 256M
+  instances: 1
+  host: qsender
+  path: ./QueueDemoSender/target/queuedemosender-0.0.1-SNAPSHOT.jar
+  services:
+    - testRabbit
+- name: QReceiver
+  memory: 256M
+  instances: 1
+  host: qreceiver
+  path: ./QueueDemoReceiver/target/queuedemo-0.0.1-SNAPSHOT.jar
+  services:
+    - testRabbit
